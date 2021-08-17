@@ -2,9 +2,18 @@ import logging
 from logging.handlers import RotatingFileHandler
 
 if __name__ == "__main__":
+
+    # Easy Way
+    '''
+        handlers = [logging.FileHandler("LogFileName.log"), logging.StreamHandler()]
+
+        logging.basicConfig(
+            format='%(asctime)s: %(levelname)s: %(message)s', level=logging.INFO, datefmt='%c',handlers=handlers)
+        logger = logging.getLogger(__name__)
+    '''
     
     # Log file name
-    logfile = 'D:\python\Apy_sniptes\LogSample.log'
+    logfile = 'LogSample.log'
 
     # Format to be used for logging
     formatter = logging.Formatter("[%(asctime)-8s] %(levelname)-8s : %(message)s")
